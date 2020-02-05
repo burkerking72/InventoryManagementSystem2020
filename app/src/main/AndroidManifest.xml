@@ -18,6 +18,11 @@
         </activity>
         <activity android:name=".Activities.LoginActivity"></activity>
         <activity android:name=".Activities.MenuActivity"></activity>
+        <activity android:name=".Activities.AddItemActivity"></activity>
+        <activity android:name=".Activities.DeleteItemActivity"></activity>
+        <activity android:name=".Activities.FindItemActivity"></activity>
+        <activity android:name=".Activities.ListAllItemsActivity"></activity>
+        <activity android:name=".Activities.UpdateItemActivity"></activity>
     </application>
 
 </manifest>
