@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ryanthomasburke.www.inventorymanagementsystem2020">
+    package="com.ryanthomasburke.www.inventorymanagementsystem2020"
+    android:installLocation="auto">
+
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:allowBackup="true"
@@ -23,6 +28,7 @@
         <activity android:name=".Activities.FindItemActivity"></activity>
         <activity android:name=".Activities.ListAllItemsActivity"></activity>
         <activity android:name=".Activities.UpdateItemActivity"></activity>
+        <activity android:name=".Activities.LiveBarcodeScanningActivity"></activity>
     </application>
 
 </manifest>
