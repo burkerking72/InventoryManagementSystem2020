@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "245229882016",
+    "firebase_url": "https://inventorymanagementsystem2020.firebaseio.com",
+    "project_id": "inventorymanagementsystem2020",
+    "storage_bucket": "inventorymanagementsystem2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245229882016:android:36e0e4b2d2f6cab73fd7c5",
+        "android_client_info": {
+          "package_name": "com.ryanthomasburke.www.inventorymanagementsystem2020"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "245229882016-vo6v76hv9ppp36pedlr7elghsmhtep1n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ryanthomasburke.www.inventorymanagementsystem2020",
+            "certificate_hash": "cb8fb521230e4173302a387c8953a921a6ea1eb0"
+          }
+        },
+        {
+          "client_id": "245229882016-ujsh0l5gl2alevuqik79gp465hb9e354.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkc9IP_PSb7TYDF68EXBAOSf7d9hmn5QQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "245229882016-ujsh0l5gl2alevuqik79gp465hb9e354.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
