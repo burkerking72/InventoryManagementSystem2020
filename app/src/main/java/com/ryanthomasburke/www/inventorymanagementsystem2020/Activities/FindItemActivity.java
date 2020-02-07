@@ -44,6 +44,15 @@ public class FindItemActivity extends AppCompatActivity {
         productID.setText(container.getBarcodeString());
     }
 
+    public void goBackToMenuFromFindItem(View view){
+        container.setBarcodeString("");
+        idView.setText("");
+        nameView.setText("");
+        quantityView.setText("");
+        priceView.setText("");
+        this.finish();
+    }
+
     public void openScanner(View view){
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)

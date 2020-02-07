@@ -13,7 +13,6 @@
         android:gravity="center"
         android:text="Inventory Management System 2020"
         android:textAlignment="center"
-        android:textColor="@android:color/black"
         android:textSize="36sp" />
 
     <Button
@@ -23,7 +22,8 @@
         android:layout_weight="1"
         android:onClick="findItem"
         android:text="Find Item"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/buttonFindAll"
@@ -32,7 +32,8 @@
         android:layout_weight="1"
         android:onClick="listItems"
         android:text="List Items"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/buttonUpdateItem"
@@ -41,7 +42,8 @@
         android:layout_weight="1"
         android:onClick="updateItem"
         android:text="Update Item"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/buttonAddItem"
@@ -50,7 +52,8 @@
         android:layout_weight="1"
         android:onClick="addItem"
         android:text="Add New Item"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/buttonDeleteItem"
@@ -59,5 +62,14 @@
         android:layout_weight="1"
         android:onClick="deleteItem"
         android:text="Delete Item"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="logout"
+        android:textSize="24sp" />
 </LinearLayout>

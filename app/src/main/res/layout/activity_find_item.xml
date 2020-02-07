@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="@dimen/layout_margin"
     android:orientation="vertical">
 
     <TextView
@@ -19,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textFindItemByID"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <EditText
@@ -43,75 +45,113 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/linearLayout"
+        android:layout_centerInParent="false"
+        android:layout_centerHorizontal="true"
         android:onClick="findItemButton"
         android:text="find" />
 
-    <TextView
-        android:id="@+id/textID"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayoutID"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/buttonFind"
-        android:text="Product ID:"
-        android:textSize="24sp" />
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textName"
+        <TextView
+            android:id="@+id/textID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prod ID:"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textIDPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/textID"
+            android:layout_marginLeft="35dp"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayoutID"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name:"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textNamePost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/textName"
+            android:layout_marginLeft="50dp"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayoutName"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity:"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textQuantityPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/textQuantity"
+            android:layout_marginLeft="25dp"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayoutQuantity"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price:"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textPricePost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/textPrice"
+            android:layout_marginLeft="60dp"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textID"
-        android:text="Name:"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/textQuantity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textName"
-        android:text="Quantity:"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/textPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textQuantity"
-        android:text="Price:"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/textIDPost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@id/textID"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/textID"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/textNamePost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@id/textName"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/textID"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/textQuantityPost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@id/textQuantity"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/textID"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/textPricePost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@id/textPrice"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/textID"
-        android:textSize="24sp" />
+        android:layout_alignParentBottom="true"
+        android:onClick="goBackToMenuFromFindItem"
+        android:text="back" />
 
 </RelativeLayout>
