@@ -15,11 +15,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
+import com.ryanthomasburke.www.inventorymanagementsystem2020.Container;
 import com.ryanthomasburke.www.inventorymanagementsystem2020.R;
 
 
 public class LoginActivity extends AppCompatActivity {
 
+    public static Container container;
     private EditText username;
     private EditText password;
     private EditText company;
@@ -29,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        container = new Container();
         username = findViewById(R.id.editUsername);
         password = findViewById(R.id.editPassword);
         company = findViewById(R.id.editCompany);
@@ -74,6 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                                 // If the credentials are correct, continue.
                                 if (username.matches(user) & password.matches(pass)) {
                                     System.out.println("SUCCESS!!!!!!!!!!!");
+                                    container.setCompany(company);
                                     loginSuccess();
                                 }
                                 // If the credentials are incorrect, notify the user.

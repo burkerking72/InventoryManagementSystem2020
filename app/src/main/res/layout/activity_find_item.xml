@@ -1,22 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button"
+    <TextView
+        android:id="@+id/textFindItemByID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:onClick="openScanner"
-        android:text="SCAN BARCODE" />
+        android:gravity="center"
+        android:text="FIND ITEM BY ID"
+        android:textAlignment="center"
+        android:textSize="36sp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textFindItemByID"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextBarcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Product ID"
+            android:inputType="textPersonName"
+            android:textAlignment="center" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="openScanner"
+            app:srcCompat="@android:drawable/ic_menu_camera" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonFind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout"
+        android:onClick="findItemButton"
+        android:text="find" />
 
     <TextView
-        android:id="@+id/barcodeText"
-        android:layout_width="match_parent"
+        android:id="@+id/textID"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:textSize="36sp" />
-</LinearLayout>
+        android:layout_below="@id/buttonFind"
+        android:text="Product ID:"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textID"
+        android:text="Name:"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textName"
+        android:text="Quantity:"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textQuantity"
+        android:text="Price:"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textIDPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/textID"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/textID"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textNamePost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/textName"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/textID"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textQuantityPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/textQuantity"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/textID"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textPricePost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/textPrice"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/textID"
+        android:textSize="24sp" />
+
+</RelativeLayout>

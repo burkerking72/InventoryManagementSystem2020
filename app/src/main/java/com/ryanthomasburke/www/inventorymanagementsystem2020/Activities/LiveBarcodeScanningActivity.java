@@ -62,7 +62,7 @@ public class LiveBarcodeScanningActivity extends AppCompatActivity implements On
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    container = FindItemActivity.container;
+    container = LoginActivity.container;
 
     setContentView(R.layout.activity_live_barcode);
     preview = findViewById(R.id.camera_preview);
