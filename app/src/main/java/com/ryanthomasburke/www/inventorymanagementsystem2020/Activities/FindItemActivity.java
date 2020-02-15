@@ -25,7 +25,7 @@ public class FindItemActivity extends AppCompatActivity {
 
     public static Container container;
     EditText productID;
-    TextView idView, nameView, quantityView, priceView;
+    TextView idView, nameView, quantityView, priceView, errorView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -37,6 +37,8 @@ public class FindItemActivity extends AppCompatActivity {
         nameView = findViewById(R.id.textNamePost);
         quantityView = findViewById(R.id.textQuantityPost);
         priceView = findViewById(R.id.textPricePost);
+        errorView = findViewById(R.id.textViewError);
+        productID.setText("");
     }
 
     public void onResume(){
@@ -80,41 +82,49 @@ public class FindItemActivity extends AppCompatActivity {
 
     public void findItemButton(View view){
         String barcodeID = productID.getText().toString();
-        createInstance().collection(container.getCompany()).document(container.getCompany())
-            .collection("Items").document(barcodeID)
-            .get()
-            .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                    if(task.isSuccessful()) {
-                        DocumentSnapshot documentSnapshot = task.getResult();
-                        // If the document searched for exists, continue.
-                        if(documentSnapshot.exists()){
-                            String productID = task.getResult().getString("id");
-                            String name = task.getResult().getString("name");
-                            int quantity = task.getResult().getLong("quantity").intValue();
-                            long price = task.getResult().getLong("price");
-                            idView.setText(productID);
-                            nameView.setText(name);
-                            quantityView.setText(String.valueOf(quantity));
-                            priceView.setText(String.valueOf(price));
+        if (barcodeID.matches("")){
+            errorView.setText("Enter a valid item ID");
+        }
+        else {
+            createInstance().collection(container.getCompany()).document(container.getCompany())
+                    .collection("Items").document(barcodeID)
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                            if (task.isSuccessful()) {
+                                DocumentSnapshot documentSnapshot = task.getResult();
+                                // If the document searched for exists, continue.
+                                if (documentSnapshot.exists()) {
+                                    String productID = task.getResult().getString("id");
+                                    String name = task.getResult().getString("name");
+                                    int quantity = task.getResult().getLong("quantity").intValue();
+                                    double price = task.getResult().getDouble("price");
+                                    System.out.println(price);
+                                    errorView.setText("");
+                                    idView.setText(productID);
+                                    nameView.setText(name);
+                                    quantityView.setText(String.valueOf(quantity));
+                                    priceView.setText(String.valueOf(price));
+                                }
+                                // If the company doesn't exist, notify the user.
+                                else {
+                                    errorView.setText("Item does not exist");
+                                    System.out.println("Does not exist");
+                                }
+                            }
+                            // Could not get a document snapshot.
+                            else {
+                                System.out.println("Could Not Get Document Snapshot");
+                            }
                         }
-                        // If the company doesn't exist, notify the user.
-                        else {
-                            System.out.println("Does not exist");
-                        }
-                    }
-                    // Could not get a document snapshot.
-                    else {
-                        System.out.println("Could Not Get Document Snapshot");
-                    }
-                }
-            }).addOnFailureListener(new OnFailureListener() {
+                    }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
                     System.out.println(e.toString());
                 }
             });
+        }
     }
 
     /*

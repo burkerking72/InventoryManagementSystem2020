@@ -36,6 +36,14 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.editPassword);
         company = findViewById(R.id.editCompany);
         loginError = findViewById(R.id.textLoginError);
+        company.setText("Test Company");
+        username.setText("ryburke15@gmail.com");
+        password.setText("password");
+    }
+
+    public void onResume(){
+        super.onResume();
+        password.setText("");
     }
 
     public void onClick(View v){

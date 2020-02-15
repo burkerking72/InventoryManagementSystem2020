@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Product ID"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:textAlignment="center" />
 
         <ImageButton
@@ -145,6 +145,15 @@
             android:layout_marginLeft="60dp"
             android:textSize="24sp" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayoutPrice"
+        android:layout_marginTop="25dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/buttonBack"

@@ -48,4 +48,9 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ListAllItemsActivity.class);
         startActivity(intent);
     }
+
+    public void logout(View view){
+        this.finish();
+    }
+
 }
