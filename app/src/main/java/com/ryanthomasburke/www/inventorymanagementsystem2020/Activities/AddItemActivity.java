@@ -43,8 +43,8 @@ public class AddItemActivity extends AppCompatActivity {
         editID.setText("");
     }
 
-    public void onResume(){
-        super.onResume();
+    public void onRestart(){
+        super.onRestart();
         editID.setText(container.getBarcodeString());
     }
 

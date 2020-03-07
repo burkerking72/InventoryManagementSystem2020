@@ -41,8 +41,8 @@ public class LoginActivity extends AppCompatActivity {
         password.setText("password");
     }
 
-    public void onResume(){
-        super.onResume();
+    public void onRestart(){
+        super.onRestart();
         password.setText("");
     }
 

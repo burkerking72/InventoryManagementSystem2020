@@ -41,8 +41,8 @@ public class FindItemActivity extends AppCompatActivity {
         productID.setText("");
     }
 
-    public void onResume(){
-        super.onResume();
+    public void onRestart(){
+        super.onRestart();
         productID.setText(container.getBarcodeString());
     }
 

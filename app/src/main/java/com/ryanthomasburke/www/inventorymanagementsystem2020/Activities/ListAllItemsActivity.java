@@ -36,8 +36,8 @@ public class ListAllItemsActivity extends AppCompatActivity {
         //cardGenerator();
     }
 
-    public void onResume(){
-        super.onResume();
+    public void onRestart(){
+        super.onRestart();
         parentLayout.removeAllViews();
         listAllItems();
     }
