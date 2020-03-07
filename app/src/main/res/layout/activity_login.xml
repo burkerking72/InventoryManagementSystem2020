@@ -57,7 +57,7 @@
         android:layout_gravity="center"
         android:onClick="onClick"
         android:text="Login"
-        android:textSize="30sp" />
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/textLoginError"
